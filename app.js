@@ -3,7 +3,7 @@ var ball;
 var goal;
 var enemy;
 var enemy2;
-
+var score = 0;
 
 
 function setup() {
@@ -48,6 +48,9 @@ function draw() {
   background(55, 100, 220);
   drawSprites();
   
+  
+
+  
   player.position.x = mouseX;
   player.position.y = mouseY;
   
@@ -59,35 +62,44 @@ function draw() {
   
   enemy3.position.y = enemy3.position.y +=18;
 
-  if (player.overlap(enemy)){
-    window.alert("game over");
-  }
-  
+
   if(ball.overlap(goal)) {
     ball.remove();
     }
-  if(player.overlap(enemy)) {
+  if(player.overlap(enemy) || player.overlap(enemy2) || player.overlap(enemy3)) {
     player.remove();  
+    player.dead = true;
   }
 
-  if (player.overlap(enemy2)) {
-    player.remove();
-  }
 
     if (enemy.position.y > 700) {
     enemy.position.y = 0;
     enemy.position.x = random(300);
-  }
+ 
+    }
   
     if (enemy2.position.y > 700) {
     enemy2.position.y = 0;
     enemy2.position.x = random(300);
-  }
+
+    }
   
     if (enemy3.position.y > 700) {
     enemy3.position.y = 0;
     enemy3.position.x = random(300);
+      if (!player.dead) {
+score = score+1; 
+      }
+    }
+   text(score, 10, 20);
+  if (player.dead) {
+    textSize(32); 
+    text("game over",130,200);
+    textSize(12); 
   }
+     
+  
+
 
 
   fill(0);
@@ -102,3 +114,4 @@ function draw() {
   text("Use your mouse to control the wabbit and refresh the page when you ",10 ,550); 
   text("get hit or get the ball to the master",10 ,570); 
 }
+
