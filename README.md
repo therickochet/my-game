@@ -1,1 +1,1 @@
-# my-game
+# Simple Dodge game
