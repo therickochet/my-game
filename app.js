@@ -91,12 +91,14 @@ function draw() {
 
 
   fill(0);
-  text("Young Wabbit",245 ,20);
-  text("Young Wabbit",245 ,20);
-  text("<--Bring the crystal ball to ME",230,40);
-   text("<--Bring the crystal ball to ME",230,40);
-  text("But Beware",100 ,200);
-    text("But Beware",100 ,200);
-  text("The sky is Falling!",110 ,250);
-  text("The sky is Falling!",110 ,250);
+  text("Young Wabbit",10 ,280);
+  text("Young Wabbit,",10 ,280);
+  text("Bring the crystal ball to the master",10,300);
+   text("Bring the crystal ball to the master",10,300);
+  text("But Beware",10 ,325);
+    text("But Beware",10 ,325);
+  text("The sky is Falling!",10 ,350);
+  text("The sky is Falling!",10 ,350);
+  text("Use your mouse to control the wabbit and refresh the page when you ",10 ,550); 
+  text("get hit or get the ball to the master",10 ,570); 
 }
